@@ -1,0 +1,24 @@
+---
+# Anything not defined I am accepting the default values.
+"IPG_vPC_TEST-1":
+  description: "VPC 1"
+  aaep: AEP_INFRADC
+  cdp: cdpDisabled
+  lldp: lldpEnabled
+  lacp: lacpActive_GracefulDisabled
+  l2_interface: vlanGlobalScope
+  link_level: 10GAuto
+  mcp: mcpEnabled
+  stp: bpduGuard
+  storm_control: stormControlBcastRate_for10G
+"IPG_vPC_TEST-2":
+  description: "VPC 2"
+  aaep: AEP_INFRADC
+  cdp: cdpDisabled
+  lldp: lldpDisabled
+  lacp: lacpActive
+  l2_interface: vlanGlobalScope
+  link_level: 10GAuto
+  mcp: mcpEnabled
+  stp: bpduGuard
+  storm_control: stormControlBcastRate_for10G

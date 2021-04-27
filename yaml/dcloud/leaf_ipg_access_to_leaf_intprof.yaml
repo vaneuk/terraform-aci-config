@@ -1,0 +1,11 @@
+---
+103:
+- port_from: 1
+  ipg:  IPG_AP_INFRADC_1GAuto
+  description: "pt-bmdc-oobm-aggr1"
+  interface_description: "to interface 1/0/2"
+108:
+- port_from: 1
+  ipg:  IPG_AP_INFRADC_1GAuto
+  description: "pt-bmdc-oobm-aggr1"
+  interface_description: "to interface 1/0/1"

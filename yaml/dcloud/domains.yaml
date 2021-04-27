@@ -1,0 +1,11 @@
+---
+layer3:
+  L3D_INFRADC:
+    vlan_pool: VlanP_Static_L3O_INFRADC
+  L3D_TEST:
+    vlan_pool: VlanP_Static_L3O_TEST
+physical:
+  PhysD_INFRADC:
+    vlan_pool: VlanP_Static_Phys_TEST
+  PhysD_TEST:
+    vlan_pool: VlanP_Static_Phys_TEST

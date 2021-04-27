@@ -1,0 +1,9 @@
+---
+VlanP_Static_Phys_INFRADC:
+  alloc_mode: "static"
+VlanP_Static_L3O_INFRADC:
+  alloc_mode: "static"
+VlanP_Static_Phys_TEST:
+  alloc_mode: "static"
+VlanP_Static_L3O_TEST:
+  alloc_mode: "static"

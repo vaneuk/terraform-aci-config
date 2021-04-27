@@ -1,0 +1,11 @@
+---
+101-102:
+- port_from: 1
+  ipg:  "IPG_vPC_TEST-1"
+  description: "BMDC-FPR-01 inside leg"
+  interface_description: "BMDC-FPR-01-inside Eth1/3, Eth1/4"
+105-106:
+- port_from: 1
+  ipg:  "IPG_vPC_TEST-2"
+  description: "BMDC-FPR-02-inside leg"
+  interface_description: "IPG_vPC_BMDC-FPR-02-inside Eth1/3, Eth1/4"

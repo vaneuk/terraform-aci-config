@@ -1,0 +1,11 @@
+---
+AEP_INFRADC:
+  domain_physical:
+    - "PhysD_INFRADC"
+  domain_layer3:
+    - "L3D_INFRADC"
+AEP_TEST:
+  domain_physical:
+    - "PhysD_TEST"
+  domain_layer3:
+    - "L3D_TEST"

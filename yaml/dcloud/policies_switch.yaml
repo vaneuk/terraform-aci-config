@@ -1,0 +1,26 @@
+---
+fast_link_failover:
+  flfEnabled:
+    description: "Fast Link Failover is enabled"
+    mode: "on"
+  flfDisabled:
+    description: "Fast Link Failover is disabled"
+    mode: "off"
+forwarding_scale_profile:
+  default:
+    # leave all parameters as default
+  fspIPv4Scale:
+    description: "Forwarding Scale Profile IPv4 Scale"
+    profile: "ipv4"
+  fspDualStack:
+    description: "Forwarding Scale Profile Dual Stack"
+    profile: "dual-stack"
+  fspHighDualStack:
+    description: "Forwarding Scale Profile High Dual Stack"
+    profile: "high-dual-stack"
+  fspHighLPM:
+    description: "Forwarding Scale Profile High LPM"
+    profile: "high-lpm"
+  fspHighPolicy:
+    description: "Forwarding Scale Profile High Policy"
+    profile: "high-policy"

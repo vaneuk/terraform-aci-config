@@ -1,0 +1,144 @@
+---
+cdp:
+  cdpEnabled:
+    admin_state: "enabled"
+  cdpDisabled:
+    admin_state: "disabled"
+lldp:
+  lldpEnabled:
+    description: "Policy to enable RX and TX of the LLDP Protocol"
+    admin_rx_st: "enabled"
+    admin_tx_st: "enabled"
+  lldpDisabled:
+    description: "Policy to disable RX and TX of the LLDP Protocol"
+    admin_rx_st: "disabled"
+    admin_tx_st: "disabled"
+l2_interface:
+  vlanGlobalScope:
+    description: "L2 Policy for VLAN Global Scope"
+    vlan_scope: "global"
+  vlanLocalScope:
+    description: "L2 Policy for VLAN Local Scope"
+    vlan_scope: "portlocal"
+lacp:
+  lacpActive:
+    description: "LACP Active Policy"
+    mode: "active"
+    ctrl: ["fast-sel-hot-stdby", "graceful-conv", "susp-individual"]
+  lacpActive_GracefulDisabled:
+    description: "LACP Active Policy for non NX-OS devices"
+    mode: "active"
+    ctrl: ["fast-sel-hot-stdby", "susp-individual"]
+  lacpActive_PxeSupport:
+    description: "LACP Active Policy for PXE servers"
+    mode: "active"
+    ctrl: ["fast-sel-hot-stdby", "graceful-conv"]
+  lacpActive_PxeSupport_GracefulDisabled:
+    description: "LACP Active Policy for PXE servers with graceful convergence disabled"
+    mode: "active"
+    ctrl: ["fast-sel-hot-stdby"]
+  lacpPassive:
+    description: "LACP Passive Policy"
+    mode: "active"
+    ctrl: ["fast-sel-hot-stdby", "graceful-conv", "susp-individual"]
+  macPin:
+    description: "MAC Pin Policy"
+    mode: "mac-pin"
+  macPin_phyNicLoad:
+    description: "MAC Pin Nic Load Policy"
+    mode: "mac-pin-nicload"
+  staticOn:
+    description: "Static port-channel"
+    mode: "off"
+link_level:
+  1G:
+    description: "1G no-negotiate Link Level Policy"
+    auto_neg: "off"
+    speed: "1G"
+  1GAuto:
+    description: "1G auto negotiation Link Level Policy"
+    auto_neg: "on"
+    speed: "1G"
+  10G:
+    description: "10G no-negotiate Link Level Policy"
+    auto_neg: "off"
+    speed: "10G"
+  10GAuto:
+    description: "10G auto negotiation Link Level Policy"
+    auto_neg: "on"
+    speed: "10G"
+  40G:
+    description: "40G no-negotiate Link Level Policy"
+    auto_neg: "off"
+    speed: "40G"
+  40GAuto:
+    description: "40G auto negotiation Link Level Policy"
+    auto_neg: "on"
+    speed: "40G"
+  100G:
+    description: "100G no-negotiate Link Level Policy"
+    auto_neg: "off"
+    speed: "100G"
+  100GAuto:
+    description: "100G auto negotiation Link Level Policy"
+    auto_neg: "on"
+    speed: "100G"
+mcp:
+  mcpEnabled:
+    description: "Enabled Mis-Cabling Protocol Policy"
+    admin_state: "enabled"
+  mcpDisabled:
+    description: "Disabled Mis-Cabling Protocol Policy"
+    admin_state: "disabled"
+stp:
+  bpduAllow:
+    description: "STP Policy with BPDU Filter and Guard Disabled"
+  bpduGuard:
+    description: "STP Policy with BPDU Guard Enabled"
+    ctrl: "bpdu-guard"
+  bpduFilter:
+    description: "STP Policy with BPDU Filter Enabled"
+    ctrl: "bpdu-filter"
+  bpduFilterGuard:
+    description: "STP Policy with BPDU Filter and Guard Enabled"
+    ctrl: "bpdu-filter, bpdu-guard"
+fc_interface:
+  auto_f_port:
+    description: "FC Interface Policy for Auto Speed, F Port, trunk-off" # There is no default description
+    # fill_pattern  = "IDLE" is already the default
+    # name          = "auto_f_port" is already the default
+    # port_mode     = "f" is already the default
+    # rx_bb_credit  = 64 is already the default
+    # speed         = "auto" is already the default
+    # trunk_mode    = "trunk-off" is already the default
+  auto_f_trunk:
+    description: "FC Interface Policy for Auto Speed, F Port, trunk-on"
+    trunk_mode: "trunk-on"
+  auto_np_port:
+    description: "FC Interface Policy for Auto Speed, NP Port, trunk-off"
+    port_mode: "np"
+  auto_np_trunk:
+    description: "FC Interface Policy for Auto Speed, NP Port, trunk-on"
+    port_mode: "np"
+    trunk_mode: "trunk-on"
+storm_control:
+  stormControlBcastRate_for1G:
+    action: "drop"
+    description: "Storm Control Policy for 1G interface"
+    bc_rate_percent: 1
+    bc_rate_burst_percent: 1
+  stormControlBcastRate_for10G:
+    action: "drop"
+    description: "Storm Control Policy for 10G interface"
+    bc_rate_percent: 0.1
+    bc_rate_burst_percent: 0.1
+  stormControlBcastRate_for25G:
+    action: "drop"
+    description: "Storm Control Policy for 25G interface"
+    bc_rate_percent: 0.04
+    bc_rate_burst_percent: 0.04
+  stormControlBcastRate_for40G:
+    action: "drop"
+    description: "Storm Control Policy for 25G interface"
+    bc_rate_percent: 0.00025
+    bc_rate_burst_percent: 0.00025
