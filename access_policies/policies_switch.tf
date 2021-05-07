@@ -17,8 +17,8 @@ module "switch_policies" {
   # fast_link_failover = contains(keys(local.policies_switch), "fast_link_failover") ? local.policies_switch.fast_link_failover : null
   # forwarding_scale_profile = contains(keys(local.policies_switch), "forwarding_scale_profile") ? local.policies_switch.forwarding_scale_profile : {}
 
-  # Just comment any value if it is not defined in YAML file. Otherwise Terraform will return Unsupported attribute Error 
-  fast_link_failover = local.policies_switch.fast_link_failover
+  # Comment any value that is not defined in YAML file
+  fast_link_failover       = local.policies_switch.fast_link_failover
   forwarding_scale_profile = local.policies_switch.forwarding_scale_profile
 }
 

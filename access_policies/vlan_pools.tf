@@ -11,7 +11,7 @@ locals {
 #=============================
 
 module "vlan_pools" {
-  source = "../../terraform-aci-access/modules/pools_vlan"
+  source    = "../../terraform-aci-access/modules/pools_vlan"
   vlan_pool = local.vlan_pool
 }
 

@@ -26,7 +26,7 @@ locals {
       relation_lldp       = contains(keys(v), "lldp") ? module.intf_policies.lldp[v.lldp] : null
       relation_mcp        = contains(keys(v), "mcp") ? module.intf_policies.mcp[v.mcp] : null
       relation_stp        = contains(keys(v), "stp") ? module.intf_policies.stp[v.stp] : null
-      relation_storm_ctrl = contains(keys(v), "storm_control") ?  module.intf_policies.storm_control[v.storm_control] : null
+      relation_storm_ctrl = contains(keys(v), "storm_control") ? module.intf_policies.storm_control[v.storm_control] : null
       relation_lacp       = contains(keys(v), "lacp") ? module.intf_policies.lacp[v.lacp] : null
     }
   }

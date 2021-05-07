@@ -1,8 +1,8 @@
 #
 locals {
   # load ids from yaml
-  leaf_ids = yamldecode(file("${local.cfg_dir}/leaf_ids.yaml"))
-  vpc_ids  = yamldecode(file("${local.cfg_dir}/leaf_vpc_ids.yaml"))
+  leaf_ids    = yamldecode(file("${local.cfg_dir}/leaf_ids.yaml"))
+  vpc_ids     = yamldecode(file("${local.cfg_dir}/leaf_vpc_ids.yaml"))
   access_ipgs = yamldecode(file("${local.cfg_dir}/leaf_ipg_access_to_leaf_intprof.yaml"))
   vpc_ipgs    = yamldecode(file("${local.cfg_dir}/leaf_ipg_vpc_to_leaf_intprof.yaml"))
 
@@ -12,8 +12,8 @@ locals {
     }
   }
   vpc_interface_profile_map = {
-    for entry in local.vpc_ids : "IntProf_Node${entry[0]}-${entry[1]}" => {
-      name = "IntProf_Node${entry[0]}-${entry[1]}"
+    for entry in local.vpc_ids : "IntProf_Node${entry.id1}-${entry.id2}" => {
+      name = "IntProf_Node${entry.id1}-${entry.id2}"
     }
   }
   access_and_vpc_interface_profile_map = merge(local.access_interface_profile_map, local.vpc_interface_profile_map)
@@ -38,42 +38,6 @@ locals {
   #         + name = "IntProf_Node104"
   #       }
   #   }
-
-  # Used for Leaf Profiles
-  access_leaf_profile_map = {
-    for entry in local.leaf_ids : "SwProf_Node${entry.id}" => {
-      name                   = "SwProf_Node${entry.id}"
-      leaf_interface_profile = module.leaf_interface_profile.leaf_interface_profile["IntProf_Node${entry.id}"]
-      leaf_selector_name     = "SwSel_Node${entry.id}"
-      # switch_association_type = "range" # is already the default
-      # node_block_name = "bl${entry.id}${entry.id}" # internal value, should be moved to module, example "name": "bl110110",
-      node_block_from = entry.id
-      node_block_to   = entry.id
-    }
-  }
-  vpc_leaf_profile_map = {
-    for entry in local.vpc_ids : "SwProf_Node${entry[0]}-${entry[1]}" => {
-      name                   = "SwProf_Node${entry[0]}-${entry[1]}"
-      leaf_interface_profile = module.leaf_interface_profile.leaf_interface_profile["IntProf_Node${entry[0]}-${entry[1]}"]
-      leaf_selector_name     = "SwSel_Node${entry[0]}-${entry[1]}"
-      # switch_association_type = "range" # is already the default
-      # node_block_name = "bl${entry[0]}${entry[1]}" # internal value, should be moved to module, example "name": "bl110110",
-      node_block_from = entry[0]
-      node_block_to   = entry[1]
-    }
-  }
-  # access_and_vpc_leaf_profile_map = merge(local.access_leaf_profile_map, local.vpc_leaf_profile_map)
-  access_and_vpc_leaf_profile_map = local.access_leaf_profile_map
-
-  # # Leaf Profile to Leaf Policy Group
-  # leaf_profile_to_pg_map = {
-  #   for entry in local.leaf_ids : "SwProf_Node${entry.id}" => {
-  #     leaf_profile_name  = "SwProf_Node${entry.id}"
-  #     leaf_selector_name = "SwSel_Node${entry.id}"
-  #     leaf_policy_group  = module.leaf_policy_group.leaf_policy_group["PG_Leaf"]
-  #     # leaf_policy_group  = module.leaf_policy_group.aci_rest.leaf_policy_group["PG_Leaf"]
-  #   }
-  # }
 
 
   access_ipgs_flatten = flatten([
