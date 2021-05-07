@@ -1,8 +1,10 @@
 ---
+default:
+  # leave all values as default
 PG_Leaf:
   description: "Leaf Fabric Access Policy Group"
-  fast_link_plcy: "flfEnabled" # created manually
-  fwd_scale_plcy: "fspIPv4Scale" # created manually
+  fast_link_plcy: "flfEnabled"
+  fwd_scale_plcy: "fspIPv4Scale"
   #   # bfd_ipv4_plcy       = "default" # is already the default
   #   # bfd_ipv6_plcy       = "default" # is already the default
   #   # bfd_mhop_ipv4_plcy  = "default" # is already the default

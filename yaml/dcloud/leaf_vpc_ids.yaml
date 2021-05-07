@@ -1,5 +1,13 @@
 ---
-- [101, 102]
-- [103, 104]
-- [105, 106]
-- [107, 108]
+- id1: 101
+  id2: 102
+  policy_group: PG_Leaf
+- id1: 103
+  id2: 104
+  policy_group: PG_Leaf
+- id1: 105
+  id2: 106
+  policy_group: PG_Leaf
+- id1: 107
+  id2: 108
+  policy_group: PG_Leaf

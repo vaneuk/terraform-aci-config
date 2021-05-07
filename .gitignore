@@ -37,7 +37,7 @@ terraform.rc
 
 
 # MAC
-.DS_Store
+**/.DS_Store
 
 # Testing
 test*
